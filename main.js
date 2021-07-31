@@ -74,8 +74,8 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('ocean.jpg');
-scene.background = spaceTexture;
+const oceanTexture = new THREE.TextureLoader().load('ocean.jpg');
+scene.background = oceanTexture;
 
 // Avatar
 
@@ -88,7 +88,7 @@ scene.background = spaceTexture;
 
 // scene.add(jeff);
 
-// Fish
+// Sea Star
 loader.load(
   './sea_star/scene.gltf',
   function (fish) {
@@ -96,7 +96,7 @@ loader.load(
     fish.scene.scale.multiplyScalar(0.02);
     fish.scene.position.x = 3;
     fish.scene.position.z = -5;
-    fish.scene.position.y = -2;
+    fish.scene.position.y = -1;
     console.log(fish.scene);
   },
   undefined,
@@ -105,7 +105,7 @@ loader.load(
   }
 );
 
-// Moon
+// Scallop
 loader.load(
   './scallop/scene.gltf',
   function (fish) {
@@ -123,22 +123,6 @@ loader.load(
   }
 );
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
-
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: moonTexture,
-    normalMap: normalTexture,
-  })
-);
-
-// scene.add(moon);
-
-moon.position.z = 30;
-moon.position.setX(-10);
-
 // jeff.position.z = -5;
 // jeff.position.x = 2;
 
@@ -153,7 +137,7 @@ function moveCamera() {
   if (fish) {
     fish.position.z = t * -0.01 - 5;
     fish.position.x = t * -0.0002 + 3;
-    fish.position.y = -2;
+    fish.position.y = -1;
     // fish.rotation.x += 0.05;
   }
   if (scallop) {
@@ -181,8 +165,6 @@ function animate() {
   torus.rotation.x += 0.005;
   torus.rotation.y += 0.005;
   torus.rotation.z += 0.005;
-
-  moon.rotation.x += 0.005;
 
   const fish = scene.getObjectByName('OSG_Scene');
   if (fish) {
