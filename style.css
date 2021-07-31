@@ -67,10 +67,10 @@ blockquote {
 }
 
 blockquote p {
+  display: inline-block;
   color: black;
-  background-color: white;
+  background-color: rgba(227, 242, 253, 0.8);
   font-size: 4rem;
-  display: inline;
   line-height: 1;
 }
 
@@ -81,8 +81,4 @@ blockquote p {
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
-}
-
-.navbar-inner {
-  background: black;
 }
