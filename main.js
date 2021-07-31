@@ -2,6 +2,8 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+import oceanURI from './ocean.jpg';
 const loader = new GLTFLoader();
 
 // Setup
@@ -74,7 +76,7 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const oceanTexture = new THREE.TextureLoader().load('ocean.jpg');
+const oceanTexture = new THREE.TextureLoader().load(oceanURI);
 scene.background = oceanTexture;
 
 // Avatar
@@ -97,7 +99,6 @@ loader.load(
     fish.scene.position.x = 3;
     fish.scene.position.z = -5;
     fish.scene.position.y = -1;
-    console.log(fish.scene);
   },
   undefined,
   function (error) {
@@ -115,7 +116,7 @@ loader.load(
     fish.scene.position.z = 30;
     fish.scene.position.y = -3;
     fish.scene.position.x = -10;
-    console.log(fish.scene);
+    document.querySelector('body').classList.toggle('loaded');
   },
   undefined,
   function (error) {
@@ -131,7 +132,6 @@ loader.load(
 function moveCamera() {
   const fish = scene.getObjectByName('OSG_Scene');
   const scallop = scene.getObjectByName('scallop');
-  console.log(fish);
   const t = document.body.getBoundingClientRect().top;
 
   if (fish) {
