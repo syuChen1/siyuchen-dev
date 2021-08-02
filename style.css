@@ -212,14 +212,43 @@ body::-webkit-scrollbar {
 }
 
 .section-container b {
-  color: #606060;
+  color: #505050;
 }
 
 #carouselExampleIndicators p {
   font-size: smaller;
   margin: 0;
 }
+#carouselExampleIndicators2 p {
+  font-size: 500;
+  margin: 0;
+}
+#carouselExampleIndicators3 p {
+  font-size: 1rem;
+  margin: 0;
+}
+#carouselExampleIndicators3 li {
+  font-size: 1rem;
+  margin: 0;
+}
 
 #carouselExampleIndicators h4 {
   margin: 0;
+}
+
+.project-container b {
+  color: #303030;
+}
+
+.project-container h4 {
+  color: #303030;
+}
+
+.project-header h2 {
+  font-size: 3rem;
+  margin: 0px;
+}
+.project-header p {
+  margin-bottom: 5px;
+  font-weight: 600;
 }

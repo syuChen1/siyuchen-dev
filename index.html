@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -110,7 +111,7 @@
 
       <section id="work">
         <div class="section-container">
-          <h2>🌮 Work Experience</h2>
+          <h2>🦑 Work Experience</h2>
 
           <div class="my-3">
             <h3 class="d-inline">University of Florida</h3>
@@ -161,12 +162,15 @@
         <div
           class="section-container d-flex flex-column justify-content-evenly"
         >
-          <h2>👩🏽‍🚀 Projects</h2>
-          <div class="my-3">
-            <b>
-              CaSMM - Computation and Science Modeling through Making Full Stack
-              Web App</b
+          <h2>🦪 Projects</h2>
+          <div class="my-3 project-container">
+            <div class="project-header">
+            <h2 style="color: peru;">
+              CaSMM</h2
             >
+            <p>Computation and Science Modeling through Making Full Stack
+              Web App</p>
+          </div>
             <div
               id="carouselExampleIndicators"
               class="carousel"
@@ -192,7 +196,7 @@
                     "
                     style="
                       height: 21.3vw;
-                      background-color: rgba(166, 227, 247, 0.4);
+                      background-color: rgba(250, 236, 178, 0.4);
                     "
                   >
                     <p>
@@ -217,9 +221,6 @@
                       support in performing a corresponding science project in
                       the classroom.
                     </p>
-                    <a href="https://casmm-staging.herokuapp.com/"
-                      >https://casmm-staging.herokuapp.com/</a
-                    >
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -233,21 +234,21 @@
                     "
                     style="
                       height: 21.3vw;
-                      background-color: rgba(166, 227, 247, 0.4);
+                      background-color: rgba(250, 236, 178, 0.4);
                     "
                   >
-                    <h4>Frontend: React, Blockly</h4>
-                    <h4>Backend: Node.js, Strapi, PostgresSQL</h4>
-                    <h4>Compile Server: Arduino, Redis, Bull</h4>
+                    <h4>Frontend: <b>React, Blockly</b></h4>
+                    <h4>Backend: <b>Node.js, Strapi, PostgresSQL</b></h4>
+                    <h4>Compile Server: <b>Arduino, Redis, Bull</b></h4>
                     <h4>
-                      Architecture: Docker, docker-compose, Github Action,
-                      Heroku
+                      Architecture: <b>Docker, Docker-compose, Github Action,
+                      Heroku</b>
                     </h4>
                   </div>
                 </div>
               </div>
-              <div>
-                <button
+              <div class="my-2">
+                                <button
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide-to="0"
@@ -278,17 +279,28 @@
                 <a
                   class="btn btn-light"
                   href="https://github.com/STEM-C/CaSMM"
+                  target="_blank"
                   role="button"
-                  >Check it out on Github</a
+                  ><i class="fab fa-github"></i> Github Page</a
                 >
+                <a
+                class="btn btn-light"
+                href="https://casmm-staging.herokuapp.com/"
+                target="_blank"
+                role="button"
+                ><i class="fas fa-location-arrow" style="color: peru;"></i> Live Demo</a
+              >
               </div>
             </div>
           </div>
-          <div class="my-3">
-            <b>
-              MicroTick - Full-Stack Ticketing App with Event-Based
-              Microservices Architecture</b
+          <div class="my-3 project-container">
+            <div class="project-header">
+            <h2 style="color:salmon">
+              MicroTick</h2
             >
+            <p>Full-Stack Ticketing App with Event-Based
+              Microservices Architecture</p>
+          </div>
             <div
               id="carouselExampleIndicators2"
               class="carousel"
@@ -314,34 +326,36 @@
                     "
                     style="
                       height: 27.5vw;
-                      background-color: rgba(166, 227, 247, 0.4);
+                      background-color: rgba(239, 174, 185, 0.4);
                     "
                   >
                     <p>
-                      CASMM, or Computation and Science Modeling through Making,
-                      is a cloud-based programming interface designed for fifth
-                      and sixth grade students to support them in building
-                      computational physical models for science experiments in
-                      the classroom.
+                      Microtick is a full stack ticketing web application built
+                      with event-based microservice Architecture. MicroTick is
+                      consist of 5 Services - Auth, Tickets, Orders, Exipration,
+                      Payments - 1 Client,1 Event bus and 1 Load Balancer.
                     </p>
                     <p>
-                      CASMM is developed by the University of Florida and Texas
-                      A&M University with support from the National Science
-                      Foundation.
+                      Every service is complete seperate from each other. None
+                      of the service rely on other service's existence to
+                      function because of its own database implementation. This
+                      means that if Ticket service goes down, the other service
+                      will still function properly and users will be able to
+                      create an order and pay for an oerder. And with the help
+                      of <b>NAT-Steaming Server</b>, when the down service goes back
+                      online, it will receive all the event it missed and be
+                      able to update its database accroundly.
                     </p>
                     <p>
-                      CASMM makes use of Google's Blockly JavaScript library to
-                      build a block based visual programming editor within our
-                      user interface. Programs created through the visual
-                      programming editor can be compiled into Arduino executable
-                      code and uploaded directly onto a students Arduino. These
-                      programs, once uploaded to the student's Arduino, provide
-                      support in performing a corresponding science project in
-                      the classroom.
+                      In order to achive easy communication between service and
+                      high avaliablity and scallibility for deployment, each
+                      service is containerlized with <b>Docker</b> and the entire
+                      container Orchestration is managed by <b>Kubernetes</b>. Workflow
+                      automation is implemented with <b>GitHub Action</b> where each
+                      service will be tested during pull request and will be
+                      built, published to <b>Digital Ocean</b> during merge to Main
+                      branch.
                     </p>
-                    <a href="https://casmm-staging.herokuapp.com/"
-                      >https://casmm-staging.herokuapp.com/</a
-                    >
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -355,20 +369,23 @@
                     "
                     style="
                       height: 27.5vw;
-                      background-color: rgba(166, 227, 247, 0.4);
+                      background-color: rgba(239, 174, 185, 0.4);
                     "
                   >
-                    <h4>Frontend: React, Blockly</h4>
-                    <h4>Backend: Node.js, Strapi, PostgresSQL</h4>
-                    <h4>Compile Server: Arduino, Redis, Bull</h4>
+                    <h4>Frontend: <b>Javascript, React, Next.js</b></h4>
                     <h4>
-                      Architecture: Docker, docker-compose, Github Action,
-                      Heroku
+                      Backend: <b>Typesctipt, Node.js, Express, MongoDB,
+                      NAT-Streaming, Redis, Bull, Stripe API</b>
+                    </h4>
+                    <h4>Test: <b>Jest, Supertest</b></h4>
+                    <h4>
+                      Architecture: <b>Docker, Kubernetes, Nginx, Github Action,
+                      Digital Ocean, Skaffold</b>
                     </h4>
                   </div>
                 </div>
               </div>
-              <div>
+              <div class="my-2">
                 <button
                   type="button"
                   data-bs-target="#carouselExampleIndicators2"
@@ -400,17 +417,28 @@
                 <a
                   class="btn btn-light"
                   href="https://github.com/syuchen1/microtick"
+                  target="_blank"
                   role="button"
-                  >Check it out on Github</a
-                >
+                  ><i class="fab fa-github"></i> Github Page
+                </a>
+                <a
+                class="btn btn-light"
+                href="https://www.microtick.xyz/"
+                target="_blank"
+                role="button"
+                ><i class="fas fa-location-arrow"  style="color:salmon"></i> Live Demo</a
+              >
               </div>
             </div>
           </div>
-          <div class="my-3">
-            <b>
-              Shoppingfy - MERN Stack E-Commerce App with Production-grade
-              Workflow</b
+          <div class="my-3 project-container">
+            <div class="project-header">
+            <h2 style="color:darkcyan;">
+              Shoppingfy</h2
             >
+            <p>MERN Stack E-Commerce App with Production-grade
+              Workflow</p>
+          </div>
             <div
               id="carouselExampleIndicators3"
               class="carousel"
@@ -420,7 +448,7 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img
-                    src="./CaSMM.PNG"
+                    src="./shoppingfy.PNG"
                     class="d-block w-100"
                     alt="CaSMM project"
                   />
@@ -435,35 +463,39 @@
                       justify-content-evenly
                     "
                     style="
-                      height: 21.3vw;
+                      height: 23.8vw;
                       background-color: rgba(166, 227, 247, 0.4);
                     "
                   >
                     <p>
-                      CASMM, or Computation and Science Modeling through Making,
-                      is a cloud-based programming interface designed for fifth
-                      and sixth grade students to support them in building
-                      computational physical models for science experiments in
-                      the classroom.
+                      Shoppingfy is a front-end focused MERN stack eCommerce web
+                      application built with production-grade workflow.
+                      Shoppingfy has all the functionalities you can find in a
+                      common shopping site:
                     </p>
+                    <ul class="my-0">
+                      <li>Full featured shopping cart</li>
+                      <li>Product reviews and ratings</li>
+                      <li>Top products carousel</li>
+                      <li>Product pagination and Product search feature</li>
+                      <li>Ceckout process (shipping, payment method, etc)</li>
+                      <li>PayPal / Credit card integration</li>
+                      <li>Admin Panel for Product/User/Order management</li>
+                    </ul>
+
                     <p>
-                      CASMM is developed by the University of Florida and Texas
-                      A&M University with support from the National Science
-                      Foundation.
+                      Shoppingfy uses TravisCI for its production automation workflow:  
+                      <ul class="my-0">
+                        <li>Push code to Github from a Feature branch</li>
+                        <li>Travis automatically pulls repo</li>
+                        <li>Travis builds a test image and test the code</li>
+                        <li>On test success, you would be able to review the code and merge it into master</li>
+                        <li>After merging, Travis automatically pulls repo and builds production image</li>
+                        <li>Travis pushes production image to Docker Hub</li>
+                        <li>Travis pushes project to AWS Elastic Beanstalk</li>
+                         <li>AWS Elastic Beanstalk pulls image from Docker Hub and deploys.</li>
+                      </ul>
                     </p>
-                    <p>
-                      CASMM makes use of Google's Blockly JavaScript library to
-                      build a block based visual programming editor within our
-                      user interface. Programs created through the visual
-                      programming editor can be compiled into Arduino executable
-                      code and uploaded directly onto a students Arduino. These
-                      programs, once uploaded to the student's Arduino, provide
-                      support in performing a corresponding science project in
-                      the classroom.
-                    </p>
-                    <a href="https://casmm-staging.herokuapp.com/"
-                      >https://casmm-staging.herokuapp.com/</a
-                    >
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -476,21 +508,20 @@
                       justify-content-evenly
                     "
                     style="
-                      height: 21.3vw;
+                      height: 23.8vw;
                       background-color: rgba(166, 227, 247, 0.4);
                     "
                   >
-                    <h4>Frontend: React, Blockly</h4>
-                    <h4>Backend: Node.js, Strapi, PostgresSQL</h4>
-                    <h4>Compile Server: Arduino, Redis, Bull</h4>
+                    <h4>Frontend: <b>React, Redux, Paypal API</b></h4>
+                    <h4>Backend: <b>Node.js, Express, MongoDB</b></h4>
                     <h4>
-                      Architecture: Docker, docker-compose, Github Action,
-                      Heroku
+                      Architecture: <b>Docker, Docker-compose, Nginx, TravisCI, AWS
+                      ElasticBeanstalk</b>
                     </h4>
                   </div>
                 </div>
               </div>
-              <div>
+              <div class="my-2">
                 <button
                   type="button"
                   data-bs-target="#carouselExampleIndicators3"
@@ -521,10 +552,18 @@
                 </button>
                 <a
                   class="btn btn-light"
-                  href="https://github.com/STEM-C/CaSMM"
+                  href="https://github.com/syuChen1/Shoppingfy-MERN"
+                  target="_blank"
                   role="button"
-                  >Check it out on Github</a
+                  ><i class="fab fa-github"></i> Github Page</a
                 >
+                <a
+                class="btn btn-light"
+                href="http://shoppingfy-env.eba-2xrp548x.us-east-2.elasticbeanstalk.com/"
+                target="_blank"
+                role="button"
+                ><i class="fas fa-location-arrow" style="color:darkcyan;"></i> Live Demo</a
+              >
               </div>
             </div>
           </div>
