@@ -1,10 +1,16 @@
 import './style.css';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+// import { } from 'three/examples/jsm/loaders/BasisTextureLoader'
+
+var loadProgress = 0;
 
 import oceanURI from './ocean.jpg';
-const loader = new GLTFLoader();
+import scallop_texture_uri from './scallop_texture.png';
+import seastar_texture_uri from './seastar_texture.jpeg';
+
+const loader = new DRACOLoader();
+loader.setDecoderPath('./draco/');
 
 // Setup
 
@@ -44,7 +50,7 @@ scene.add(torus);
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(5, 5, 5);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
 scene.add(pointLight, ambientLight);
 
 // Helpers
@@ -75,62 +81,69 @@ function addStar() {
 Array(200).fill().forEach(addStar);
 
 // Background
-
 const oceanTexture = new THREE.TextureLoader().load(oceanURI);
 scene.background = oceanTexture;
 
-// Avatar
-
-// const jeffTexture = new THREE.TextureLoader().load('russ.jpg');
-
-// const jeff = new THREE.Mesh(
-//   new THREE.BoxGeometry(3, 3, 3),
-//   new THREE.MeshBasicMaterial({ map: jeffTexture })
-// );
-
-// scene.add(jeff);
-
+//Load seastar
+const seastarTexture = new THREE.TextureLoader().load(seastar_texture_uri);
 // Sea Star
 loader.load(
-  './sea_star/scene.gltf',
-  function (fish) {
-    scene.add(fish.scene);
-    fish.scene.scale.multiplyScalar(0.02);
-    fish.scene.position.x = 3;
-    fish.scene.position.z = -5;
-    fish.scene.position.y = -1;
+  './seastar.drc',
+  function (geometry) {
+    const material = new THREE.MeshStandardMaterial({ map: seastarTexture });
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.scale.multiplyScalar(0.03);
+    mesh.name = 'seastar';
+    mesh.position.z = -5;
+    mesh.position.y = -1;
+    mesh.position.x = 3;
+    scene.add(mesh);
+    loadProgress++;
+    if (loadProgress === 2) {
+      document.querySelector('body').classList.toggle('loaded');
+    }
   },
-  undefined,
+  // called as loading progresses
+  function (xhr) {
+    console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+  },
   function (error) {
     console.error(error);
   }
 );
 
-// Scallop
+//Load scallop
+const scallopTexture = new THREE.TextureLoader().load(scallop_texture_uri);
+
 loader.load(
-  './scallop/scene.gltf',
-  function (fish) {
-    scene.add(fish.scene);
-    fish.scene.scale.multiplyScalar(0.12);
-    fish.scene.name = 'scallop';
-    fish.scene.position.z = 30;
-    fish.scene.position.y = -3;
-    fish.scene.position.x = -10;
-    document.querySelector('body').classList.toggle('loaded');
+  './scallop.drc',
+  function (geometry) {
+    const material = new THREE.MeshStandardMaterial({ map: scallopTexture });
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.scale.multiplyScalar(0.12);
+    mesh.name = 'scallop';
+    mesh.position.z = 30;
+    mesh.position.y = -3;
+    mesh.position.x = -10;
+    scene.add(mesh);
+    loadProgress++;
+    if (loadProgress === 2) {
+      document.querySelector('body').classList.toggle('loaded');
+    }
   },
-  undefined,
+  // called as loading progresses
+  function (xhr) {
+    console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+  },
   function (error) {
     console.error(error);
   }
 );
-
-// jeff.position.z = -5;
-// jeff.position.x = 2;
 
 // Scroll Animation
 
 function moveCamera() {
-  const fish = scene.getObjectByName('OSG_Scene');
+  const fish = scene.getObjectByName('seastar');
   const scallop = scene.getObjectByName('scallop');
   const t = document.body.getBoundingClientRect().top;
 
@@ -161,15 +174,14 @@ moveCamera();
 
 function animate() {
   requestAnimationFrame(animate);
-
   torus.rotation.x += 0.005;
   torus.rotation.y += 0.005;
   torus.rotation.z += 0.005;
 
-  const fish = scene.getObjectByName('OSG_Scene');
+  const fish = scene.getObjectByName('seastar');
   if (fish) {
-    fish.rotation.y += 0.005;
-    fish.rotation.z += 0.001;
+    fish.rotation.x -= 0.0015;
+    fish.rotation.z += 0.01;
   }
 
   const scallop = scene.getObjectByName('scallop');
