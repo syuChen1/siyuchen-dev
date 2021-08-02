@@ -122,8 +122,8 @@ loader.load(
     const mesh = new THREE.Mesh(geometry, material);
     mesh.scale.multiplyScalar(0.12);
     mesh.name = 'scallop';
-    mesh.position.z = 30;
-    mesh.position.y = -3;
+    mesh.position.z = 23;
+    mesh.position.y = 0;
     mesh.position.x = -10;
     scene.add(mesh);
     loadProgress++;
@@ -157,6 +157,10 @@ function moveCamera() {
     scallop.rotation.x += 0.02;
     scallop.rotation.y += 0.04;
     scallop.rotation.z += 0.02;
+    if (t < -3000) {
+      scallop.position.z = (t + 3000) * -0.005 + 23;
+      scallop.position.x = (t + 3000) * -0.0001 - 10;
+    }
   }
 
   // jeff.rotation.y += 0.01;
@@ -164,7 +168,7 @@ function moveCamera() {
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
-  camera.rotation.y = t * -0.0002;
+  // camera.rotation.y = t * -0.0002;
 }
 
 document.body.onscroll = moveCamera;

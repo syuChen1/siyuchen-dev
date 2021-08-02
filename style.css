@@ -145,7 +145,7 @@ canvas {
 
 main {
   width: 100vw;
-  color: white;
+  color: black;
   z-index: 99;
   position: absolute;
   width: 100%;
@@ -202,11 +202,24 @@ blockquote p {
   line-height: 1;
 }
 
-#work {
+#projects {
   grid-column: 6 / 12;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
+}
+
+.section-container b {
+  color: #606060;
+}
+
+#carouselExampleIndicators p {
+  font-size: smaller;
+  margin: 0;
+}
+
+#carouselExampleIndicators h4 {
+  margin: 0;
 }
