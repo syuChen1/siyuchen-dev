@@ -5,7 +5,7 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
 var loadProgress = 0;
 
-import oceanURI from './ocean.jpg';
+import oceanURI from './ocean2.jpg';
 import scallop_texture_uri from './scallop_texture.png';
 import seastar_texture_uri from './seastar_texture.jpeg';
 
@@ -120,7 +120,7 @@ loader.load(
   function (geometry) {
     const material = new THREE.MeshStandardMaterial({ map: scallopTexture });
     const mesh = new THREE.Mesh(geometry, material);
-    mesh.scale.multiplyScalar(0.12);
+    mesh.scale.multiplyScalar(0.08);
     mesh.name = 'scallop';
     mesh.position.z = 17;
     mesh.position.y = 0;
@@ -154,12 +154,12 @@ function moveCamera() {
     // fish.rotation.x += 0.05;
   }
   if (scallop) {
-    scallop.rotation.x += 0.02;
-    scallop.rotation.y += 0.04;
-    scallop.rotation.z += 0.02;
+    scallop.rotation.x += 0.015;
+    scallop.rotation.y += 0.03;
+    scallop.rotation.z += 0.015;
     if (t < -3000) {
       scallop.position.z = (t + 3000) * -0.005 + 17;
-      scallop.position.x = (t + 3000) * -0.0001 - 10;
+      scallop.position.x = (t + 3000) * -0.0002 - 10;
     }
   }
 
@@ -178,19 +178,19 @@ moveCamera();
 
 function animate() {
   requestAnimationFrame(animate);
-  torus.rotation.x += 0.005;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.005;
+  torus.rotation.x += 0.001;
+  torus.rotation.y += 0.001;
+  torus.rotation.z += 0.001;
 
   const fish = scene.getObjectByName('seastar');
   if (fish) {
-    fish.rotation.x -= 0.0015;
-    fish.rotation.z += 0.01;
+    fish.rotation.x -= 0.0017;
+    fish.rotation.z += 0.009;
   }
 
   const scallop = scene.getObjectByName('scallop');
   if (scallop) {
-    scallop.rotation.y += 0.02;
+    scallop.rotation.y += 0.01;
   }
 
   // controls.update();
