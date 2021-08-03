@@ -25,9 +25,9 @@
       rel="stylesheet"
     />
     <title>Siyu Chen</title>
-  <script type="module" crossorigin src="/website/assets/index.41ee04d8.js"></script>
+  <script type="module" crossorigin src="/website/assets/index.9438169a.js"></script>
   <link rel="modulepreload" href="/website/assets/vendor.671f623d.js">
-  <link rel="stylesheet" href="/website/assets/index.9a6ef04c.css">
+  <link rel="stylesheet" href="/website/assets/index.385d04e5.css">
 </head>
   <body>
     <div id="loader-wrapper">
@@ -38,7 +38,7 @@
     </div>
 
     <nav
-      class="navbar navbar-expand-sm navbar-light py-2 fixed-top"
+      class="navbar navbar-expand-sm navbar-light py-3 fixed-top"
       style="background: rgba(227, 242, 253, 0.8)"
     >
       <div class="container mr-4">
@@ -98,9 +98,9 @@
       <header>
         <h1>🤿 Hello!</h1>
         <p>
-          I am <b>Siyu Chen</b>, a full stack sortware engineer from 🐊UF. I
+          I am <b>Siyu Chen</b>, a full stack software engineer from 🐊UF. I
           love building web applications and thrill to see others enjoying my
-          work
+          work.
         </p>
         <p id="email">
           Get in touch <i class="far fa-hand-point-right"></i>
@@ -377,26 +377,27 @@
                     <p>
                       Microtick is a full stack ticketing web application built
                       with event-based microservice Architecture. MicroTick is
-                      consist of 5 Services - Auth, Tickets, Orders, Exipration,
-                      Payments - 1 Client,1 Event bus and 1 Load Balancer.
+                      consists of 5 Services - Auth, Tickets, Orders,
+                      Expiration, Payments - 1 Client,1 Event bus and 1 Load
+                      Balancer.
                     </p>
                     <p>
-                      Every service is complete seperate from each other. None
-                      of the service rely on other service's existence to
-                      function because of its own database implementation. This
-                      means that if Ticket service goes down, the other service
-                      will still function properly and users will be able to
-                      create an order and pay for an oerder. And with the help
-                      of <b>NAT-Steaming Server</b>, when the down service goes
-                      back online, it will receive all the event it missed and
-                      be able to update its database accroundly.
+                      Every service is completely separate from each other. None
+                      of the services rely on other service's existence to
+                      function because of their own database implementation.
+                      This means that if Ticket service goes down, the other
+                      service will still function properly and users will be
+                      able to create an order and pay for an order. And with the
+                      help of <b>NAT-Steaming Server</b>, when the down service
+                      goes back online, it will receive all the events it missed
+                      and be able to update its database accordingly.
                     </p>
                     <p>
-                      In order to achive easy communication between service and
-                      high avaliablity and scallibility for deployment, each
-                      service is containerlized with <b>Docker</b> and the
-                      entire container Orchestration is managed by
-                      <b>Kubernetes</b>. Workflow automation is implemented with
+                      In order to achieve easy communication between service and
+                      high availability and scalability for deployment, each
+                      service is containerized with <b>Docker</b> and the entire
+                      container Orchestration is managed by <b>Kubernetes</b>.
+                      Workflow automation is implemented with
                       <b>GitHub Action</b> where each service will be tested
                       during pull request and will be built, published to
                       <b>Digital Ocean</b> during merge to Main branch.
