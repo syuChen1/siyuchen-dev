@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -20,7 +23,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
       rel="stylesheet"
     />
-    <title>Siyu's Website</title>
+    <title>Siyu Chen</title>
   </head>
   <body>
     <div id="loader-wrapper">
@@ -51,13 +54,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#manifesto" class="nav-link">Manifesto</a>
+              <a href="#aboutme" class="nav-link mx-3">About Me</a>
             </li>
             <li class="nav-item">
-              <a href="#projects" class="nav-link">Projects</a>
+              <a href="#work" class="nav-link mx-3">Work Experience</a>
             </li>
             <li class="nav-item">
-              <a href="#work" class="nav-link">Work</a>
+              <a href="#projects" class="nav-link mx-3">Projects</a>
             </li>
           </ul>
         </div>
@@ -66,45 +69,48 @@
     <canvas id="bg"></canvas>
     <main>
       <header>
-        <h1>Siyu Chen</h1>
-        <p>🤿 Welcome to my website!</p>
+        <h1>🤿 Hello!</h1>
+        <p>
+          I am <b>Siyu Chen</b>, a full stack sortware engineer from 🐊UF. I
+          love building web applications and thrill to see others enjoying my
+          work
+        </p>
+        <p id="email">
+          Get in touch <i class="far fa-hand-point-right"></i>
+          <a
+            href="mailto: siyuchen.dev@gmail.com"
+            style="
+              color: black;
+              box-shadow: rgb(82, 135, 235) 0px -3px 0px inset;
+              text-decoration: none;
+            "
+            >siyuchen.dev@gmail.com</a
+          >
+        </p>
       </header>
 
-      <blockquote>
-        <p>I like making stuff and putting it on the internet</p>
-      </blockquote>
-
-      <section id="manifesto">
+      <section id="aboutme">
         <div class="section-container">
-          <h2>📜 Manifesto</h2>
+          <h2>📜 About Me</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I am a senior at the University of Florida studying computer
+            science. I am currently working as a Development Lead for the CaSMM
+            team in the Engaging Learning Lab @UF. I am passionate about backend
+            engineering with a focus on scalable services and process
+            automation. However, with my knowledge of JS frontend frameworks, I
+            am proficient with full stack web development. Outside of work and
+            school, I have taken interest in learning new web development tools
+            and frameworks by following Youtube videos and incorporating them
+            into my own projects.
           </p>
-
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I like to consider myself as a pertinacious problem solver. I cannot
+            take my mind off the problem until I find a good solution. I thrill
+            at the satisfaction I get when solving a problem after hours or days
+            of hard work. When facing a problem, I like to explore all options
+            and seek to build out the most appropriate solution while taking
+            efficiency and competency into consideration. I am highly motivated,
+            goal-oriented, and determined.
           </p>
         </div>
       </section>
@@ -165,12 +171,12 @@
           <h2>🦪 Projects</h2>
           <div class="my-3 project-container">
             <div class="project-header">
-            <h2 style="color: peru;">
-              CaSMM</h2
-            >
-            <p>Computation and Science Modeling through Making Full Stack
-              Web App</p>
-          </div>
+              <h2 style="color: peru">CaSMM</h2>
+              <p>
+                Computation and Science Modeling through Making Full Stack Web
+                App
+              </p>
+            </div>
             <div
               id="carouselExampleIndicators"
               class="carousel"
@@ -230,25 +236,36 @@
                       w-100
                       d-flex
                       flex-column
-                      justify-content-evenly
+                      justify-content-center
                     "
                     style="
                       height: 21.3vw;
                       background-color: rgba(250, 236, 178, 0.4);
                     "
                   >
-                    <h4>Frontend: <b>React, Blockly</b></h4>
-                    <h4>Backend: <b>Node.js, Strapi, PostgresSQL</b></h4>
-                    <h4>Compile Server: <b>Arduino, Redis, Bull</b></h4>
-                    <h4>
-                      Architecture: <b>Docker, Docker-compose, Github Action,
-                      Heroku</b>
-                    </h4>
+                    <div class="row my-3">
+                      Frontend:
+                      <span>React</span> <span>Blockly</span>
+                    </div>
+                    <div class="row my-3">
+                      Backend:
+                      <span>Node.js</span> <span>Strapi</span
+                      ><span>PostgresSQL</span>
+                    </div>
+                    <div class="row my-3">
+                      Compile Server:
+                      <span>Arduino</span> <span>Redis</span><span>Bull</span>
+                    </div>
+                    <div class="row my-3">
+                      Architecture:
+                      <span>Docker</span> <span>Docker-compose</span
+                      ><span>Github Action</span><span>Heroku</span>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="my-2">
-                                <button
+                <button
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide-to="0"
@@ -284,23 +301,24 @@
                   ><i class="fab fa-github"></i> Github Page</a
                 >
                 <a
-                class="btn btn-light"
-                href="https://casmm-staging.herokuapp.com/"
-                target="_blank"
-                role="button"
-                ><i class="fas fa-location-arrow" style="color: peru;"></i> Live Demo</a
-              >
+                  class="btn btn-light"
+                  href="https://casmm-staging.herokuapp.com/"
+                  target="_blank"
+                  role="button"
+                  ><i class="fas fa-location-arrow" style="color: peru"></i>
+                  Live Demo</a
+                >
               </div>
             </div>
           </div>
           <div class="my-3 project-container">
             <div class="project-header">
-            <h2 style="color:salmon">
-              MicroTick</h2
-            >
-            <p>Full-Stack Ticketing App with Event-Based
-              Microservices Architecture</p>
-          </div>
+              <h2 style="color: salmon">MicroTick</h2>
+              <p>
+                Full-Stack Ticketing App with Event-Based Microservices
+                Architecture
+              </p>
+            </div>
             <div
               id="carouselExampleIndicators2"
               class="carousel"
@@ -342,19 +360,19 @@
                       means that if Ticket service goes down, the other service
                       will still function properly and users will be able to
                       create an order and pay for an oerder. And with the help
-                      of <b>NAT-Steaming Server</b>, when the down service goes back
-                      online, it will receive all the event it missed and be
-                      able to update its database accroundly.
+                      of <b>NAT-Steaming Server</b>, when the down service goes
+                      back online, it will receive all the event it missed and
+                      be able to update its database accroundly.
                     </p>
                     <p>
                       In order to achive easy communication between service and
                       high avaliablity and scallibility for deployment, each
-                      service is containerlized with <b>Docker</b> and the entire
-                      container Orchestration is managed by <b>Kubernetes</b>. Workflow
-                      automation is implemented with <b>GitHub Action</b> where each
-                      service will be tested during pull request and will be
-                      built, published to <b>Digital Ocean</b> during merge to Main
-                      branch.
+                      service is containerlized with <b>Docker</b> and the
+                      entire container Orchestration is managed by
+                      <b>Kubernetes</b>. Workflow automation is implemented with
+                      <b>GitHub Action</b> where each service will be tested
+                      during pull request and will be built, published to
+                      <b>Digital Ocean</b> during merge to Main branch.
                     </p>
                   </div>
                 </div>
@@ -365,23 +383,35 @@
                       w-100
                       d-flex
                       flex-column
-                      justify-content-evenly
+                      justify-content-center
                     "
                     style="
                       height: 27.5vw;
                       background-color: rgba(239, 174, 185, 0.4);
                     "
                   >
-                    <h4>Frontend: <b>Javascript, React, Next.js</b></h4>
-                    <h4>
-                      Backend: <b>Typesctipt, Node.js, Express, MongoDB,
-                      NAT-Streaming, Redis, Bull, Stripe API</b>
-                    </h4>
-                    <h4>Test: <b>Jest, Supertest</b></h4>
-                    <h4>
-                      Architecture: <b>Docker, Kubernetes, Nginx, Github Action,
-                      Digital Ocean, Skaffold</b>
-                    </h4>
+                    <div class="row my-3">
+                      Frontend:
+                      <span>Javascript</span> <span>React</span
+                      ><span>Next.js</span>
+                    </div>
+                    <div class="row my-3">
+                      Backend:
+                      <span>Typesctipt</span> <span>Node.js</span
+                      ><span>Express</span><span>MongoDB</span
+                      ><span>NAT-Streaming</span><span>Redis</span
+                      ><span>Bull</span>
+                    </div>
+                    <div class="row my-3">
+                      Test:
+                      <span>Jest</span> <span>Supertest</span>
+                    </div>
+                    <div class="row my-3">
+                      Architecture:
+                      <span>Docker</span> <span>Kubernetes</span
+                      ><span>Nginx</span><span>Github Action</span
+                      ><span>Digital Ocean</span><span>Skaffold</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -422,23 +452,21 @@
                   ><i class="fab fa-github"></i> Github Page
                 </a>
                 <a
-                class="btn btn-light"
-                href="https://www.microtick.xyz/"
-                target="_blank"
-                role="button"
-                ><i class="fas fa-location-arrow"  style="color:salmon"></i> Live Demo</a
-              >
+                  class="btn btn-light"
+                  href="https://www.microtick.xyz/"
+                  target="_blank"
+                  role="button"
+                  ><i class="fas fa-location-arrow" style="color: salmon"></i>
+                  Live Demo</a
+                >
               </div>
             </div>
           </div>
           <div class="my-3 project-container">
             <div class="project-header">
-            <h2 style="color:darkcyan;">
-              Shoppingfy</h2
-            >
-            <p>MERN Stack E-Commerce App with Production-grade
-              Workflow</p>
-          </div>
+              <h2 style="color: darkcyan">Shoppingfy</h2>
+              <p>MERN Stack E-Commerce App with Production-grade Workflow</p>
+            </div>
             <div
               id="carouselExampleIndicators3"
               class="carousel"
@@ -484,18 +512,29 @@
                     </ul>
 
                     <p>
-                      Shoppingfy uses TravisCI for its production automation workflow:  
-                      <ul class="my-0">
-                        <li>Push code to Github from a Feature branch</li>
-                        <li>Travis automatically pulls repo</li>
-                        <li>Travis builds a test image and test the code</li>
-                        <li>On test success, you would be able to review the code and merge it into master</li>
-                        <li>After merging, Travis automatically pulls repo and builds production image</li>
-                        <li>Travis pushes production image to Docker Hub</li>
-                        <li>Travis pushes project to AWS Elastic Beanstalk</li>
-                         <li>AWS Elastic Beanstalk pulls image from Docker Hub and deploys.</li>
-                      </ul>
+                      Shoppingfy uses TravisCI for its production automation
+                      workflow:
                     </p>
+
+                    <ul class="my-0">
+                      <li>Push code to Github from a Feature branch</li>
+                      <li>Travis automatically pulls repo</li>
+                      <li>Travis builds a test image and test the code</li>
+                      <li>
+                        On test success, you would be able to review the code
+                        and merge it into master
+                      </li>
+                      <li>
+                        After merging, Travis automatically pulls repo and
+                        builds production image
+                      </li>
+                      <li>Travis pushes production image to Docker Hub</li>
+                      <li>Travis pushes project to AWS Elastic Beanstalk</li>
+                      <li>
+                        AWS Elastic Beanstalk pulls image from Docker Hub and
+                        deploys.
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -505,19 +544,29 @@
                       w-100
                       d-flex
                       flex-column
-                      justify-content-evenly
+                      justify-content-center
                     "
                     style="
                       height: 23.8vw;
                       background-color: rgba(166, 227, 247, 0.4);
                     "
                   >
-                    <h4>Frontend: <b>React, Redux, Paypal API</b></h4>
-                    <h4>Backend: <b>Node.js, Express, MongoDB</b></h4>
-                    <h4>
-                      Architecture: <b>Docker, Docker-compose, Nginx, TravisCI, AWS
-                      ElasticBeanstalk</b>
-                    </h4>
+                    <div class="row my-3">
+                      Frontend:
+                      <span>React</span> <span>Redux</span
+                      ><span>Paypal API</span>
+                    </div>
+                    <div class="row my-3">
+                      Backend:
+                      <span>Javascript</span> <span>Node.js</span>
+                      <span>Express</span><span>MongoDB</span>
+                    </div>
+                    <div class="row my-3">
+                      Architecture:
+                      <span>Docker</span> <span>Docker-compose</span>
+                      <span>Nginx</span><span>TravisCI</span
+                      ><span>AWS ElasticBeanstalk</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -558,12 +607,13 @@
                   ><i class="fab fa-github"></i> Github Page</a
                 >
                 <a
-                class="btn btn-light"
-                href="http://shoppingfy-env.eba-2xrp548x.us-east-2.elasticbeanstalk.com/"
-                target="_blank"
-                role="button"
-                ><i class="fas fa-location-arrow" style="color:darkcyan;"></i> Live Demo</a
-              >
+                  class="btn btn-light"
+                  href="http://shoppingfy-env.eba-2xrp548x.us-east-2.elasticbeanstalk.com/"
+                  target="_blank"
+                  role="button"
+                  ><i class="fas fa-location-arrow" style="color: darkcyan"></i>
+                  Live Demo</a
+                >
               </div>
             </div>
           </div>
