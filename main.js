@@ -5,12 +5,12 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
 var loadProgress = 0;
 
-import oceanURI from './ocean2.jpg';
-import scallop_texture_uri from './scallop_texture.png';
-import seastar_texture_uri from './seastar_texture.jpeg';
+import oceanURI from './src/ocean2.jpg';
+import scallop_texture_uri from './src/scallop_texture.png';
+import seastar_texture_uri from './src/seastar_texture.jpeg';
 
 const loader = new DRACOLoader();
-loader.setDecoderPath('./draco/');
+loader.setDecoderPath('./src/draco/');
 
 // Setup
 
@@ -88,7 +88,7 @@ scene.background = oceanTexture;
 const seastarTexture = new THREE.TextureLoader().load(seastar_texture_uri);
 // Sea Star
 loader.load(
-  './seastar.drc',
+  './src/seastar.drc',
   function (geometry) {
     const material = new THREE.MeshStandardMaterial({ map: seastarTexture });
     const mesh = new THREE.Mesh(geometry, material);
@@ -116,7 +116,7 @@ loader.load(
 const scallopTexture = new THREE.TextureLoader().load(scallop_texture_uri);
 
 loader.load(
-  './scallop.drc',
+  './src/scallop.drc',
   function (geometry) {
     const material = new THREE.MeshStandardMaterial({ map: scallopTexture });
     const mesh = new THREE.Mesh(geometry, material);
