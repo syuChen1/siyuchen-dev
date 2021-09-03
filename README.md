@@ -1,4 +1,1 @@
-npm run build
-git add dist -f
-git commit
-git subtree push --prefix dist origin gh-pages
+Protfolio Website built with HTML, CSS and Three.js for 3D rendering. 
